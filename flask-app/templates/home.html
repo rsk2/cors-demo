@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <!-- Prevent the Automatic Favicon Request -->
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <h1 id="cors-result">
+        Awaiting response...
+    </h1>
+    <script>
+    (async () => {
+        // Ajax call to Django API
+        let response = await fetch("http://localhost:8000")
+        let text = await response.text()
+        document.querySelector("#cors-result").innerHTML = text
+    })();
+    </script>
+</body> 
